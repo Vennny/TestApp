@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Containers\Contacts\Contracts;
 
 use App\Containers\Contacts\Models\Contact;
-use App\Containers\Contacts\Queries\ContactsQueryBuilder;
 use Illuminate\Support\Collection;
 
 interface ContactsRepositoryInterface

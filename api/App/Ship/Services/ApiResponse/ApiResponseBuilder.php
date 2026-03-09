@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Ship\Services\ApiResponse;
 
 use App\Ship\Contracts\QueryBuilderInterface;
-use App\Ship\Parents\DataTransporters\DataTransporter;
 use App\Ship\Parents\Queries\QueryBuilder;
 use App\Ship\Parents\Transformers\ApiTransformer;
 use App\Ship\Services\DataHandler\DataHandlerApiRequestParser;
