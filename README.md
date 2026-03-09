@@ -19,5 +19,9 @@ docker compose exec app php artisan key:generate
 docker compose exec app php artisan migrate
 ```
 
+```bash
+docker compose restart worker
+```
+
 
 Frontend běží na http://localhost:3001
