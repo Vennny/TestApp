@@ -21,6 +21,8 @@ final class ContactXmlCachedImportManager extends CachedImportManager
 
     public const string CACHE_INVALID_SUFFIX = ':invalid';
 
+    private const string ITEMS_IN_INSERT_CHUNK = 500;
+
     private const string IMPORT_DONE_ATTRIBUTE_TOTAL = 'total';
 
     private const string IMPORT_DONE_ATTRIBUTE_IMPORTED = 'imported';
@@ -79,7 +81,7 @@ final class ContactXmlCachedImportManager extends CachedImportManager
         $duplicateItems = [];
         $invalidItems = [];
 
-        foreach (\array_chunk(\iterator_to_array($xml->item, false), 500) as $chunk) {
+        foreach (\array_chunk(\iterator_to_array($xml->item, false), self::ITEMS_IN_INSERT_CHUNK) as $chunk) {
             $toInsert = [];
 
             foreach ($chunk as $item) {
