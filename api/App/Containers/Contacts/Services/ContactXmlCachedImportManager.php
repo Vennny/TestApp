@@ -21,7 +21,7 @@ final class ContactXmlCachedImportManager extends CachedImportManager
 
     public const string CACHE_INVALID_SUFFIX = ':invalid';
 
-    private const string ITEMS_IN_INSERT_CHUNK = 500;
+    private const int ITEMS_IN_INSERT_CHUNK = 500;
 
     private const string IMPORT_DONE_ATTRIBUTE_TOTAL = 'total';
 
