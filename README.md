@@ -1,3 +1,4 @@
+A demo application for CRUD operations on contacts. The index allowsfull-text filtering and paginating the results. The API also accepts XML for bulk import using queues. 
 
 ```bash
 cp api/.env.example api/.env
