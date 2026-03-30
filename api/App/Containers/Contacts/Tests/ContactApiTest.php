@@ -102,7 +102,6 @@ final class ContactApiTest extends TestCase
         ]);
     }
 
-
     public function testUpdatePatchOk(): void
     {
         $item = Contact::factory()->create();
@@ -129,5 +128,19 @@ final class ContactApiTest extends TestCase
         $response->assertStatus(204);
 
         $this->assertDatabaseEmpty('contact');
+    }
+
+    public function testStoreValidationFails(): void
+    {
+        $firstName = $this->faker->firstName;
+        $lastName = $this->faker->lastName;
+        $email = 'notvalid';
+
+        $this->postJson('/api/contacts', [
+            ContactRequestFilter::FIELD_FIRST_NAME => $firstName,
+            ContactRequestFilter::FIELD_LAST_NAME => $lastName,
+            ContactRequestFilter::FIELD_EMAIL => $email,
+        ])
+            ->assertStatus(422);
     }
 }
